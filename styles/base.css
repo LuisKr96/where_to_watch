@@ -1,0 +1,40 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green:          #22c55e;
+  --green-dark:     #16a34a;
+  --green-dim:      rgba(34, 197, 94, 0.12);
+  --navy:           #0a1628;
+  --navy-mid:       #111f38;
+  --navy-light:     #1a2e4a;
+  --bg:             #f5f5f2;
+  --bg-card:        #ffffff;
+  --bg-muted:       #f0f0ec;
+  --text-primary:   #111110;
+  --text-secondary: #6b6b67;
+  --text-hint:      #a3a39e;
+  --border:         rgba(0,0,0,0.08);
+  --border-mid:     rgba(0,0,0,0.14);
+  --radius-sm:      6px;
+  --radius-md:      10px;
+  --radius-lg:      14px;
+  --font-body:      'Barlow', sans-serif;
+  --font-display:   'Barlow Condensed', sans-serif;
+  --shadow-card:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "where_to_watch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisKr96/where_to_watch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LuisKr96/where_to_watch/issues"
+  },
+  "homepage": "https://github.com/LuisKr96/where_to_watch#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "i18n-iso-countries": "^7.14.0",
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -7,13 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/filters.css" />
+  <link rel="stylesheet" href="styles/matches.css" />
+  <link rel="stylesheet" href="styles/matchday.css" />
+  <link rel="stylesheet" href="styles/utilities.css" />
 </head>
 <body>
 
   <div class="app">
 
-    <!-- Header -->
     <header class="hero">
       <div class="hero-inner">
         <div class="logo">
@@ -30,27 +34,24 @@
         </div>
         <div class="hero-copy">
           <h1>Find every match,<br>on every screen.</h1>
-          <p>Select your country to see what channel each game is on.</p>
+          <p>Select your country and competition, then hit Search.</p>
         </div>
       </div>
     </header>
 
-    <!-- Filters -->
     <div class="filters">
       <div class="filter-row">
         <div class="select-wrap">
-          <label for="country-select">Country</label>
-          <select id="country-select">
-            <option value="">Select country...</option>
-            <option value="england">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</option>
-            <option value="germany">🇩🇪 Germany</option>
-            <option value="spain">🇪🇸 Spain</option>
-            <option value="italy">🇮🇹 Italy</option>
-            <option value="france">🇫🇷 France</option>
-            <option value="usa">🇺🇸 United States</option>
-            <option value="australia">🇦🇺 Australia</option>
-            <option value="ireland">🇮🇪 Ireland</option>
-          </select>
+          <label for="country-input">Country</label>
+          <div class="country-search-wrap">
+            <input
+              type="text"
+              id="country-input"
+              placeholder="Type a country..."
+              autocomplete="off"
+            />
+            <ul class="country-suggestions" id="country-suggestions"></ul>
+          </div>
         </div>
         <div class="select-wrap">
           <label for="comp-select">Competition</label>
@@ -61,18 +62,12 @@
             <option value="laliga">La Liga</option>
             <option value="bundesliga">Bundesliga</option>
             <option value="seriea">Serie A</option>
-            <option value="intl">Internationals</option>
           </select>
         </div>
       </div>
-      <div class="date-nav">
-        <button class="date-btn" id="prev-date" aria-label="Previous day">&#8249;</button>
-        <span class="date-label" id="date-label">Today</span>
-        <button class="date-btn" id="next-date" aria-label="Next day">&#8250;</button>
-      </div>
+      <button id="search-btn" class="search-btn" disabled>Search</button>
     </div>
 
-    <!-- Main content -->
     <main class="content" id="content">
       <div class="empty-state" id="empty-state">
         <div class="empty-icon">
@@ -82,12 +77,13 @@
             <path d="M4 16 L36 16" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </div>
-        <p>Select a country above to see today's broadcast listings</p>
+        <p>Type a country, pick a competition, then hit Search.</p>
       </div>
       <div id="matches-container"></div>
     </main>
 
   </div>
+
   <script src="api.js"></script>
   <script src="data/broadcasters.js"></script>
   <script src="script.js"></script>

@@ -1,0 +1,44 @@
+.matchday-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.matchday-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0 16px;
+  text-align: center;
+  flex: 1;
+}
+
+.matchday-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--bg);
+  border: none;
+  color: var(--text-secondary);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s;
+  flex-shrink: 0;
+}
+
+.matchday-btn:hover:not(:disabled) {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+.matchday-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
